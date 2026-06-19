@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="pt"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Festa Junina</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui;background:#0a0500;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:20px;gap:20px}h1{color:#fc0;font-size:1.4rem}p{color:#ccc;font-size:.9rem;max-width:300px}.btn{display:inline-block;background:#d03080;color:#fff;padding:16px 36px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:1.1rem;box-shadow:0 4px 0 #8a1050;cursor:pointer;border:none}.btn:active{transform:scale(.96)}small{color:#888;font-size:.7rem;margin-top:4px}.fallback{display:none;margin-top:12px;color:#f66;font-size:.8rem}.fallback a{color:#fc0;display:block;margin:6px 0}</style></head><body><h1>🎉 Festa Junina</h1><p>Toque no botão para abrir<br>o Instagram Stories com a moldura</p><button class="btn" id="b">📸 Abrir Instagram</button><small>Depois tire sua foto e posicione a moldura!</small><div class="fallback" id="f"><hr style="border-color:#333;width:200px;margin:16px auto"><p>Instagram não abriu automaticamente?</p><a href="https://apps.apple.com/app/instagram/id389801252">📱 Baixar Instagram (iOS)</a><a href="https://play.google.com/store/apps/details?id=com.instagram.android">📱 Baixar Instagram (Android)</a></div><script>
+<!DOCTYPE html><html lang="pt"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Festa Junina</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui;background:#0a0500;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:20px;gap:20px}h1{color:#fc0;font-size:1.4rem}p{color:#ccc;font-size:.9rem;max-width:300px}.btn{display:inline-block;background:#d03080;color:#fff;padding:16px 36px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:1.1rem;box-shadow:0 4px 0 #8a1050;cursor:pointer;border:none}.btn:active{transform:scale(.96)}small{color:#888;font-size:.7rem;margin-top:4px}.fallback{display:none;margin-top:12px;color:#f66;font-size:.8rem}.fallback a{color:#fc0;display:block;margin:6px 0}</style></head><body><h1>🎉 Festa Junina</h1><p>Toque no botão para abrir<br>o Instagram Stories com a moldura</p><button class="btn" id="b">📸 Abrir Instagram</button><small>Depois tire sua foto e posicione a moldura!</small><div class="fallback" id="f"><hr style="border-color:#333;width:200px;margin:16px auto"><p>Não abriu? Instagram instalado?</p><a href="https://play.google.com/store/apps/details?id=com.instagram.android">📱 Baixar na Play Store</a></div><script>
 (function(){
 var S='https://files.catbox.moe/yrpbp2.png';
 var A=/Android/i.test(navigator.userAgent);
@@ -8,15 +8,11 @@ var T;
 
 B.addEventListener('click',function(){
   T=Date.now();
-  if(A){
-    var a=document.createElement('a');
-    a.href='intent://share?com.instagram.sharedSticker.stickerImage='+encodeURIComponent(S)+'#Intent;package=com.instagram.android;scheme=https;end';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  } else {
-    window.location='instagram-stories://share?com.instagram.sharedSticker.stickerImage='+S;
-  }
+  // Both platforms: direct window.location from user gesture works
+  window.location = A
+    ? 'intent://share?com.instagram.sharedSticker.stickerImage='+encodeURIComponent(S)+'#Intent;package=com.instagram.android;scheme=instagram-stories;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.instagram.android;end'
+    : 'instagram-stories://share?com.instagram.sharedSticker.stickerImage='+S;
+  
   setTimeout(function(){
     if(Date.now()-T<3500) F.style.display='block';
   },2500);
