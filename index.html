@@ -2,53 +2,57 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:system-ui,-apple-system,sans-serif;
-  background:linear-gradient(135deg,#0a0500 0%,#1a0a00 50%,#0a0500 100%);
+  background:#0a0500;
   color:#fff;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  min-height:100vh;text-align:center;padding:24px;gap:28px;
+  min-height:100vh;text-align:center;padding:28px 20px;gap:24px;
+  position:relative;overflow:hidden;
+}
+body::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+  background:
+    radial-gradient(circle at 80% 20%,#fc05,0%,transparent 40%),
+    radial-gradient(circle at 20% 80%,#f805,0%,transparent 40%),
+    radial-gradient(circle at 50% 50%,#ff05,0%,transparent 50%);
+  pointer-events:none;
+}
+.bandeirinhas{
+  font-size:2rem;letter-spacing:6px;opacity:.6;
 }
 h1{
-  font-size:1.8rem;
-  background:linear-gradient(135deg,#fc0,#f80);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  font-size:2rem;color:#fc0;
+  text-shadow:0 0 20px #fc04;
 }
-p{color:#ccc;font-size:.95rem;line-height:1.5}
+p{color:#ddd;font-size:.95rem;line-height:1.5}
 .btn{
-  display:inline-block;padding:14px 32px;border-radius:14px;
-  text-decoration:none;font-weight:bold;font-size:1rem;
-  transition:transform .15s,opacity .15s;
+  display:inline-block;
+  background:linear-gradient(135deg,#25a045,#1d7d36);
+  color:#fff;padding:16px 44px;border-radius:16px;
+  text-decoration:none;font-weight:bold;font-size:1.1rem;
+  box-shadow:0 4px 0 #144,0 0 24px #25a04540;
+  transition:transform .15s;
 }
 .btn:active{transform:scale(.95)}
-.btn-download{
-  background:linear-gradient(135deg,#25a045,#1d7d36);
-  color:#fff;box-shadow:0 4px 0 #144;
-}
-.btn-instagram{
-  background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-  color:#fff;box-shadow:0 4px 0 #8a1050;
-}
-.btn-group{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 ol{
-  text-align:left;background:#111;border-radius:12px;
-  padding:18px 26px;max-width:300px;font-size:.85rem;line-height:1.9;
+  text-align:left;background:#14100a;border:1px solid #fc04;
+  border-radius:14px;padding:20px 28px;max-width:320px;
+  font-size:.85rem;line-height:2;
 }
-ol li{margin:2px 0;color:#bbb}
+ol li{margin:2px 0;color:#ddd}
 ol li b{color:#fc0}
-small{color:#666;font-size:.72rem;max-width:280px}
-footer{margin-top:8px;opacity:.5;font-size:.68rem}
+.circle{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.circle:nth-child(1){background:#ff6b6b}.circle:nth-child(2){background:#ffd93d}.circle:nth-child(3){background:#6bcb77}
 </style></head><body>
+<div class="bandeirinhas">🎊 🎉 🎊</div>
 <h1>Festa Junina</h1>
-<p>Baixe a moldura transparente<br>e use como sticker nos Stories</p>
-<div class="btn-group">
-  <a class="btn btn-download" href="https://files.catbox.moe/thanug.png" download>Baixar Moldura</a>
-</div>
+<p>Baixe a moldura transparente<br>e use como sticker nos seus Stories</p>
+<a class="btn" href="https://files.catbox.moe/thanug.png" download>Baixar Moldura</a>
 <ol>
-  <li>Abra o <b>Instagram</b></li>
-  <li>Crie um Story e selecione sua <b>foto</b></li>
-  <li>Toque em <b>Figurinhas</b></li>
-  <li>Toque em <b>Foto</b> e escolha a moldura</li>
-  <li><b>Posicione</b> e publique</li>
+  <li><span class="circle"></span>Abra o <b>Instagram</b></li>
+  <li><span class="circle"></span>Crie um Story com sua <b>foto</b></li>
+  <li><span class="circle"></span>Toque em <b>Figurinhas</b></li>
+  <li><span class="circle"></span>Toque em <b>Foto</b> e escolha a moldura</li>
+  <li><span class="circle"></span><b>Posicione</b> e publique</li>
 </ol>
-<small>Moldura 960x1438 com fundo transparente</small>
-<footer>tinyurl.com/fj-mold</footer>
+<div class="bandeirinhas">🎊 🎉 🎊</div>
 </body></html>
