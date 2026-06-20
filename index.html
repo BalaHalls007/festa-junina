@@ -2,102 +2,80 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:system-ui,-apple-system,sans-serif;
-  background:#0a0500;
+  background:#0a0400;
   color:#fff;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  min-height:100vh;text-align:center;padding:32px 20px;
-  position:relative;overflow:hidden;
-  gap:22px;
+  min-height:100vh;text-align:center;padding:40px 20px;
+  gap:20px;
 }
-body::before{
-  content:'';position:absolute;top:0;left:0;width:100%;height:100%;
-  background:
-    radial-gradient(ellipse at 85% 15%,#fc03,0%,transparent 50%),
-    radial-gradient(ellipse at 15% 85%,#f803,0%,transparent 50%),
-    radial-gradient(ellipse at 50% 60%,#ff03,0%,transparent 60%);
-  pointer-events:none;
+.estrela{
+  display:flex;gap:16px;
+  font-size:14px;color:#fc0;opacity:.5;
+  letter-spacing:8px;
 }
-.fita{
-  width:100%;max-width:360px;height:80px;
-  background:repeating-linear-gradient(45deg,#e62424,#e62424 12px,#c41c1c 12px,#c41c1c 24px);
-  border-radius:4px;opacity:.9;
-  position:relative;
-  display:flex;align-items:center;justify-content:center;
+h1{
+  font-size:2.2rem;font-weight:800;
+  color:#fc0;
+  text-shadow:0 2px 0 #a65e00;
 }
-.fita::before,.fita::after{
-  content:'';position:absolute;bottom:-12px;
-  width:0;height:0;
-  border-left:14px solid transparent;
-  border-right:14px solid transparent;
-  border-top:14px solid #c41c1c;
-}
-.fita::before{left:24px}
-.fita::after{right:24px}
-.fita span{font-weight:bold;font-size:1.1rem;letter-spacing:2px;text-shadow:0 1px 2px #0006}
-h1{margin-top:8px;font-size:2rem;color:#fc0;text-shadow:0 0 24px #fc04,0 0 48px #fc02}
-.sub{color:#ddd;font-size:.9rem;line-height:1.5;opacity:.9}
+.line{width:50px;height:2px;background:#fc0;opacity:.4;border-radius:1px}
+.sub{color:#cdc;font-size:.9rem;line-height:1.6}
 
 .btn{
   display:inline-block;
-  background:linear-gradient(180deg,#2cb84a,#1a8834);
-  color:#fff;padding:15px 50px;border-radius:50px;
-  text-decoration:none;font-weight:bold;font-size:1.05rem;
+  background:#25a045;
+  color:#fff;padding:14px 48px;border-radius:50px;
+  text-decoration:none;font-weight:700;font-size:1rem;
   letter-spacing:.5px;
-  box-shadow:0 5px 0 #0f5c21,0 0 32px #2cb84a30;
-  transition:transform .15s;
+  box-shadow:0 4px 0 #155c29;
+  transition:transform .1s;
 }
-.btn:active{transform:scale(.95)}
+.btn:active{transform:scale(.96)}
 
 .steps{
-  text-align:left;background:linear-gradient(180deg,#1c140a,#120c04);
-  border:1px solid #fc06;
-  border-radius:16px;padding:22px 30px;max-width:340px;
-  font-size:.84rem;line-height:2.2;
-  box-shadow:0 0 20px #fc01;
+  text-align:left;
+  background:#120c04;
+  border:1px solid #fc02;
+  border-radius:16px;padding:20px 28px;max-width:330px;
+  font-size:.82rem;line-height:2.3;
 }
-.steps li{color:#eee;padding-left:4px}
+.steps li{color:#ddd;list-style:none}
 .steps li b{color:#fc0}
-.num{
-  display:inline-block;
-  width:20px;height:20px;line-height:20px;text-align:center;
-  border-radius:50%;
-  font-size:.7rem;font-weight:bold;
-  margin-right:8px;
+.steps li::before{
+  content:'';display:inline-block;
+  width:7px;height:7px;border-radius:50%;
+  margin-right:10px;vertical-align:middle;
 }
-.num:nth-of-type(1){background:#ff6b6b}.num:nth-of-type(2){background:#ffd93d;color:#000}.num:nth-of-type(3){background:#6bcb77}.num:nth-of-type(4){background:#4d96ff}.num:nth-of-type(5){background:#cc4de0}
+.steps li:nth-child(1)::before{background:#ff6b6b}
+.steps li:nth-child(2)::before{background:#ffd93d}
+.steps li:nth-child(3)::before{background:#6bcb77}
+.steps li:nth-child(4)::before{background:#4d96ff}
+.steps li:nth-child(5)::before{background:#cc4de0}
 
-.dots{
-  display:flex;gap:24px;opacity:.5;
-  font-size:1.2rem;letter-spacing:4px;
+footer{
+  margin-top:8px;opacity:.35;
+  font-size:.7rem;letter-spacing:1px;
 }
-.dots span{animation:pulse 2s ease-in-out infinite}
-.dots span:nth-child(2){animation-delay:.3s}
-.dots span:nth-child(3){animation-delay:.6s}
-@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
-
-.sep{width:80px;height:3px;background:linear-gradient(90deg,transparent,#fc0,transparent);border-radius:2px}
 </style></head><body>
 
-<div class="fita"><span>ARRAIÁ 2026</span></div>
+<div class="estrela">✦ &bull; ✦ &bull; ✦</div>
 
 <h1>Festa Junina</h1>
 
-<div class="sep"></div>
+<div class="line"></div>
 
 <p class="sub">Baixe a moldura transparente<br>e use como sticker nos Stories</p>
 
 <a class="btn" href="https://files.catbox.moe/thanug.png" download>BAIXAR MOLDURA</a>
 
 <ol class="steps">
-  <li><span class="num">1</span>Abra o <b>Instagram</b></li>
-  <li><span class="num">2</span>Crie um Story com sua <b>foto</b></li>
-  <li><span class="num">3</span>Toque em <b>Figurinhas</b></li>
-  <li><span class="num">4</span>Toque em <b>Foto</b> e escolha a moldura</li>
-  <li><span class="num">5</span><b>Posicione</b> e publique</li>
+  <li>Abra o <b>Instagram</b></li>
+  <li>Crie um Story com sua <b>foto</b></li>
+  <li>Toque em <b>Figurinhas</b></li>
+  <li>Toque em <b>Foto</b> e escolha a moldura</li>
+  <li><b>Posicione</b> e publique</li>
 </ol>
 
-<div class="dots">
-  <span>•</span><span>•</span><span>•</span>
-</div>
+<footer>tinyurl.com/fj-mold</footer>
 
 </body></html>
