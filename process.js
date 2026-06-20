@@ -54,14 +54,6 @@ async function process() {
       const i = (y * width + x) * 4;
       const r = data[i], g = data[i + 1], b = data[i + 2];
 
-      const maxC = Math.max(r, g, b);
-      const minC = Math.min(r, g, b);
-      const bright = (r + g + b) / 3;
-      const sat = maxC - minC;
-
-      const isDarkBg = maxC < 12;
-      const isLightBg = bright > 190 && sat < 48 && minC / Math.max(maxC, 1) > 0.84;
-
       let makeTransparent = false;
 
       if (left === -1) {
@@ -69,12 +61,6 @@ async function process() {
         makeTransparent = true;
       } else if (x < left || x > right) {
         // Outside content boundaries
-        makeTransparent = true;
-      } else if (isDarkBg) {
-        // Black background within content area
-        makeTransparent = true;
-      } else if (isLightBg) {
-        // White/cream background within content area
         makeTransparent = true;
       }
 
